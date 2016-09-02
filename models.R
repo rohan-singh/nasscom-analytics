@@ -6,7 +6,6 @@ model_svm <- svm(as.factor(Lung_Cancer)~., data = train, probability = TRUE)
 predict <- predict (model_svm, test, probability = TRUE)
 
 #Random Forest
-
 library(randomForest)
 train <- read.csv("train_fac.csv")
 test <- read.csv("test_fac.csv")
