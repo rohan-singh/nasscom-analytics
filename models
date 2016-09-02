@@ -1,0 +1,14 @@
+#Support Vector Machines
+library(e1071)
+train <- read.csv("train.csv")
+test <- read.csv("test.csv")
+model_svm <- svm(as.factor(Lung_Cancer)~., data = train, probability = TRUE)
+predict <- predict (model_svm, test, probability = TRUE)
+
+#Random Forest
+
+library(randomForest)
+train <- read.csv("train_fac.csv")
+test <- read.csv("test_fac.csv")
+model_rf <- randomForest(Lung_Cancer~ #Features, data = train, importance = TRUE)
+predict <- predict (model_rf, test, type= "prob")
